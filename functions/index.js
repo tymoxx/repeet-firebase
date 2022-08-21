@@ -5,7 +5,7 @@ const request = require("request");
 exports.notifyNewSignup = functions.auth.user().onCreate((user, context) => {
     const {email} = user;
 
-    return request.post("https://hooks.slack.com/services/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", {
+    return request.post("https://hooks.slack.com/services/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", {
         json: {
             text: `✨ New signup from ${email}!`,
             channel: "#feed",
@@ -19,7 +19,7 @@ exports.notifyNewSignup = functions.auth.user().onCreate((user, context) => {
 exports.notifyUserDeleting = functions.auth.user().onDelete((user, context) => {
     const {email} = user;
 
-    return request.post("https://hooks.slack.com/services/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", {
+    return request.post("https://hooks.slack.com/services/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", {
         json: {
             text: `👋 User deleted his profile ${email}!`,
             channel: "#feed",
