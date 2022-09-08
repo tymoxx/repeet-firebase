@@ -3,11 +3,14 @@ const request = require("request");
 
 
 exports.notifyNewSignup = functions.auth.user().onCreate((user, context) => {
-    const {email} = user;
+    const {email, uid, providerData} = user;
 
     return request.post("https://hooks.slack.com/services/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", {
         json: {
-            text: `✨ New signup from ${email}!`,
+            text: `✨ New signup
+            ${email}
+            ${uid}
+            ${providerData[0]?.providerId}`,
             channel: "#feed",
             icon_emoji: ":ghost:",
             username: "Repeet bot",
