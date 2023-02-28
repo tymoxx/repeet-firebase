@@ -1,0 +1,5 @@
+{
+   "webcredentials": {
+      "apps": [ "NJDLL88F9F.app.talkingstone" ]
+   }
+}
